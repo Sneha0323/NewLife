@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <%- include('header') %>
+
+    <!-- contact section start -->
+
+    <div class="contact_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="contact_text">Update User Details</h1>
+            <form action="/Userupdate" method="post">
+              <h1><%= msg %></h1>
+              
+            </form>
+          </div>
+
+          <div class="col-md-6">
+          
+            <h1 class="contact_text">Update Here</h1>
+            <form action="/Userupdate" method="post">
+                <div class="form-group">
+                  <div class="form-group">
+                    <input type="text" class="email-bt" placeholder="Enter Id to update" name="id" required>
+                  </div>
+                  <input type="text" class="email-bt" placeholder="Name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="Mobile No." name="mno" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="City" name="city" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="Email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="userName" name="unm" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="email-bt" placeholder="Password" name="pwd">
+                </div>
+                <div class="main_bt"><input type="submit" value="Update">
+                </div>
+              </form>
+
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- contact section end -->
+      <%- include('footer') %>
+</body>
+
+</html>

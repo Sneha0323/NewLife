@@ -1,0 +1,37 @@
+<%- include('header') %>
+<table style="width:90%;text-align:center;margin:5%;background-color:deepskyblue;font-size:large;font-weight:bolder;color:black" border="10px solid black"  >
+    
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile No.</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>User Name</th>
+        <th>Password</th>
+        <th>Status</th>
+        <th>Role</th>
+    </tr>
+    <tr>
+        <% for(let row of userDetails){ %>
+        <td><%= row._id %></td>
+        <td><%= row.name %></td>
+        <td><%= row.mno %></td>
+        <td><%= row.city %></td>
+        <td><%= row.email %></td>
+        <td><%= row.unm %></td>
+        <td><%= row.pwd %></td>
+        <td><% if(row.status==1){ %>
+            <a style="color: green;" href="/admin/manageuserstatus?s=block&regid=<%= row._id %>" >Active User</a></td>
+        <% } else
+        if(row.status==0) { %> 
+            <td> <a style="color: blue;" href="/admin/manageuserstatus?s=verify&regid=<%= row._id %>">De-active User</a>
+            <% } %></td>
+    
+            <td><a style="color: red;"href="/admin/manageuserstatus?s=delete&regid=<%= row._id %>">Delete User</a>
+            </td>
+    
+    </tr>
+    <% } %>
+</table>
+<%- include('footer') %>
